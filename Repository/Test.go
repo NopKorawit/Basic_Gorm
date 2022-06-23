@@ -66,9 +66,9 @@ func Generate()(NewId int) {
 	}
 	test := model.Test{}
 	db.Last(&test)
-	fmt.Println(test.Code / 1000)
+	// fmt.Println(test.Code / 10000)
 	
-	last := (test.Code / 1000)
+	last := (test.Code / 10000)
 	now,err := strconv.Atoi(time.Now().Format("200601"))
 	if err !=nil{
 		panic(err)
@@ -77,11 +77,11 @@ func Generate()(NewId int) {
 	
 	if last == now {
 		NewId := test.Code+1
-		// println(NewId) 
+		println(NewId) 
 		return NewId
 	}
-	NewId = now*1000+1
-	// println(NewId)
+	NewId = now*10000+1
+	println(NewId)
 	return NewId
 
 }

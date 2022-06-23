@@ -16,13 +16,15 @@ func main() {
 	// repository.UpdateGender2(6, "zzzz") //1qury แต่ห้ามเป็น 0 และ ""
 	// repository.DeleteGender(5)
 
-	repository.CreateTest("Golf")
+	repository.CreateTest("Golf11sadaa")
+	// repository.CreateTest("Golf11sadas")
+	// repository.CreateTest("Golf11sadsa")
 	// repository.CreateTest(202206002, "Test2")
 	// repository.CreateTest(202206003, "Test3")
 	// repository.CreateTest(660, "T2")
 	// repository.CreateTest(046544, "Test4")
-	// repository.DeleteTest(2)
-	// repository.DeleterealTest(10)
+	// repository.DeleteTest(27)
+	// repository.DeleterealTest(23)
 	repository.GetTests()
 	// repository.Generate()
 
