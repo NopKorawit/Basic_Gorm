@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"database/sql"
 	"fmt"
 	"orm/handler"
 	"orm/model"
@@ -92,7 +93,8 @@ func UpdateGender2(id uint, name string) {
 		panic(err)
 	}
 	gender := model.Gender{Name: name} //ไม่อัพเดตตัว 0 หรือ ""
-	tx := db.Model(&model.Gender{}).Where("id=?", id).Updates(gender)
+	// tx := db.Model(&model.Gender{}).Where("id=?", id).Updates(gender)
+	tx := db.Model(&model.Gender{}).Where("id=@id", sql.Named("id", id)).Updates(gender)
 	if tx.Error != nil {
 		fmt.Println(tx.Error)
 		return

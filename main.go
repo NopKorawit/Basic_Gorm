@@ -6,29 +6,26 @@ import (
 
 func main() {
 
-	// err1 := db.AutoMigrate(Gender{}, Test{}, Customer{})
-	// if err1 != nil {
-	// 	panic(err1)
-	// }
+	// repository.AutoMigrate()
 
-	repository.CreateGender("TestXX1aX")
-	repository.GetGenders()
-	// GetGender(2)
-	// GetGenderByName("Male")
-	// UpdateGender(5, "YYYY") //select +save  2qury
-	// UpdateGender2(6, "zzzz") //1qury แต่ห้ามเป็น 0 และ ""
-	// DeleteGender(5)
+	// repository.CreateGender("TestaXX1aX")
+	// repository.GetGenders()
+	// repository.GetGender(10)
+	// repository.GetGenderByName("Male")
+	// repository.UpdateGender(6, "YYYY") //select +save  2qury
+	// repository.UpdateGender2(6, "zzzz") //1qury แต่ห้ามเป็น 0 และ ""
+	// repository.DeleteGender(5)
 
-	// CreateTest(0, "Test1")
-	// CreateTest(6460, "Test2")
-	// CreateTest(046544, "Test4")
-	// DeleteTest(3)
-	// DeleterealTest(4)
-	// GetTests()
+	// repository.CreateTest(45501, "Test6")
+	// repository.CreateTest(660, "T2")
+	// repository.CreateTest(046544, "Test4")
+	// repository.DeleteTest(2)
+	// repository.DeleterealTest(10)
+	// repository.GetTests()
 
-	// CreateCustomer("Golf", 1)
-	// CreateCustomer("Nop", 1)
-	// CreateCustomer("Ing", 2)
-	// GetCustomer()
+	// repository.CreateCustomer("Golf", 1)
+	// repository.CreateCustomer("Nop", 1)
+	// repository.CreateCustomer("Ing", 2)
+	repository.GetCustomer()
 
 }
