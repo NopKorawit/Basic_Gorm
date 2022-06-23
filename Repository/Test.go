@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"orm/handler"
 	"orm/model"
+	"strconv"
+	"time"
 )
 
 func AutoMigrate() {
@@ -18,11 +20,12 @@ func AutoMigrate() {
 }
 
 //----------------------------------------------------------------------------
-func CreateTest(code uint, name string) {
+func CreateTest( name string) {
 	db, err := handler.DB()
 	if err != nil {
 		panic(err)
 	}
+	code := Generate()
 	test := model.Test{Name: name, Code: code}
 	db.Create(&test)
 
@@ -54,4 +57,31 @@ func DeleterealTest(id uint) {
 		panic(err)
 	}
 	db.Unscoped().Delete(&model.Test{}, id)
+}
+
+func Generate()(NewId int) {
+	db, err := handler.DB()
+	if err != nil {
+		panic(err)
+	}
+	test := model.Test{}
+	db.Last(&test)
+	fmt.Println(test.Code / 1000)
+	
+	last := (test.Code / 1000)
+	now,err := strconv.Atoi(time.Now().Format("200601"))
+	if err !=nil{
+		panic(err)
+	}
+	// fmt.Println(now.Format("200601"))
+	
+	if last == now {
+		NewId := test.Code+1
+		// println(NewId) 
+		return NewId
+	}
+	NewId = now*1000+1
+	// println(NewId)
+	return NewId
+
 }
